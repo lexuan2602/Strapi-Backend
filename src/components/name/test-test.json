@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_name_test_tests",
+  "info": {
+    "displayName": "Test Test",
+    "icon": "arrowDown"
+  },
+  "options": {},
+  "attributes": {
+    "Description": {
+      "type": "string"
+    },
+    "Link": {
+      "type": "string"
+    }
+  }
+}

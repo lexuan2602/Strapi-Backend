@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_playlist_youtube_playlists",
+  "info": {
+    "displayName": "Playlist",
+    "icon": "alien"
+  },
+  "options": {},
+  "attributes": {
+    "Link": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "string"
+    }
+  }
+}

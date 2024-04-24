@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "heart_radios",
+  "info": {
+    "singularName": "heart-radio",
+    "pluralName": "heart-radios",
+    "displayName": "HeartRadio",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "RadioName": {
+      "type": "string"
+    },
+    "RadioDescription": {
+      "type": "text"
+    },
+    "YoutubeVideo": {
+      "type": "component",
+      "repeatable": true,
+      "component": "playlist-youtube.playlist"
+    },
+    "Category": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::category.category"
+    },
+    "RadioThumbnail": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}
