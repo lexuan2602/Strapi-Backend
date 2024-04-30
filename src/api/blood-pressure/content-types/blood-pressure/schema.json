@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "blood_pressures",
+  "info": {
+    "singularName": "blood-pressure",
+    "pluralName": "blood-pressures",
+    "displayName": "BloodPressure"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "BloodPressureData": {
+      "type": "json"
+    },
+    "UserID": {
+      "type": "integer"
+    }
+  }
+}

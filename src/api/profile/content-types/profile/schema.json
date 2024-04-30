@@ -1,0 +1,61 @@
+{
+  "kind": "collectionType",
+  "collectionName": "profiles",
+  "info": {
+    "singularName": "profile",
+    "pluralName": "profiles",
+    "displayName": "Profile",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "UserID": {
+      "type": "integer"
+    },
+    "male": {
+      "type": "boolean"
+    },
+    "BPMeds": {
+      "type": "boolean"
+    },
+    "prevalentStroke": {
+      "type": "boolean"
+    },
+    "prevalentHyp": {
+      "type": "boolean"
+    },
+    "diabetes": {
+      "type": "boolean"
+    },
+    "log_cigsPerDay": {
+      "type": "integer"
+    },
+    "log_totChol": {
+      "type": "decimal"
+    },
+    "weight": {
+      "type": "decimal"
+    },
+    "height": {
+      "type": "integer"
+    },
+    "log_BMI": {
+      "type": "decimal"
+    },
+    "log_heartRate": {
+      "type": "decimal"
+    },
+    "log_glucose": {
+      "type": "decimal"
+    },
+    "log_age": {
+      "type": "integer"
+    },
+    "BloodPressureData": {
+      "type": "json"
+    }
+  }
+}

@@ -788,6 +788,37 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
+export interface ApiBloodPressureBloodPressure extends Schema.CollectionType {
+  collectionName: 'blood_pressures';
+  info: {
+    singularName: 'blood-pressure';
+    pluralName: 'blood-pressures';
+    displayName: 'BloodPressure';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    BloodPressureData: Attribute.JSON;
+    UserID: Attribute.Integer;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::blood-pressure.blood-pressure',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::blood-pressure.blood-pressure',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiCategoryCategory extends Schema.CollectionType {
   collectionName: 'categories';
   info: {
@@ -859,6 +890,51 @@ export interface ApiHeartRadioHeartRadio extends Schema.CollectionType {
   };
 }
 
+export interface ApiProfileProfile extends Schema.CollectionType {
+  collectionName: 'profiles';
+  info: {
+    singularName: 'profile';
+    pluralName: 'profiles';
+    displayName: 'Profile';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    UserID: Attribute.Integer;
+    male: Attribute.Boolean;
+    BPMeds: Attribute.Boolean;
+    prevalentStroke: Attribute.Boolean;
+    prevalentHyp: Attribute.Boolean;
+    diabetes: Attribute.Boolean;
+    log_cigsPerDay: Attribute.Integer;
+    log_totChol: Attribute.Decimal;
+    weight: Attribute.Decimal;
+    height: Attribute.Integer;
+    log_BMI: Attribute.Decimal;
+    log_heartRate: Attribute.Decimal;
+    log_glucose: Attribute.Decimal;
+    log_age: Attribute.Integer;
+    BloodPressureData: Attribute.JSON;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::profile.profile',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::profile.profile',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiSliderSlider extends Schema.CollectionType {
   collectionName: 'sliders';
   info: {
@@ -890,6 +966,37 @@ export interface ApiSliderSlider extends Schema.CollectionType {
   };
 }
 
+export interface ApiSolutionSolution extends Schema.CollectionType {
+  collectionName: 'solutions';
+  info: {
+    singularName: 'solution';
+    pluralName: 'solutions';
+    displayName: 'Solutions';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Index: Attribute.Integer;
+    SolutionDescription: Attribute.Text;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::solution.solution',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::solution.solution',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -908,9 +1015,12 @@ declare module '@strapi/types' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::blood-pressure.blood-pressure': ApiBloodPressureBloodPressure;
       'api::category.category': ApiCategoryCategory;
       'api::heart-radio.heart-radio': ApiHeartRadioHeartRadio;
+      'api::profile.profile': ApiProfileProfile;
       'api::slider.slider': ApiSliderSlider;
+      'api::solution.solution': ApiSolutionSolution;
     }
   }
 }

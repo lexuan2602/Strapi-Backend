@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "solutions",
+  "info": {
+    "singularName": "solution",
+    "pluralName": "solutions",
+    "displayName": "Solutions"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Index": {
+      "type": "integer"
+    },
+    "SolutionDescription": {
+      "type": "text"
+    }
+  }
+}
